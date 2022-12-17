@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import SignIn from '../src/components/SignIn'
+import SignUp from '../src/components/SignUp'
+import Home from '../src/components/Home'
+import Account from '../src/components/Account'
+import { Routes, Route } from 'react-router-dom';
+import { AuthContextProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="app">
+        <header className="text-4xl font-bold text-center underline">Firebase Auth with Context</header>
+      </div>
+      <AuthContextProvider>
+        <Routes>
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+        </Routes>
+      </AuthContextProvider>
+    </>
   );
 }
 
