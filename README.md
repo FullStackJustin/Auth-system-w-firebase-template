@@ -1,8 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+Here is a firebase authentication biolerplate with .env variables that are empty for resuse. 
+To use, set up Firebase app on firebase console and provide necessary environment variables to .env file.
 
 In the project directory, you can run:
 

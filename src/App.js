@@ -1,18 +1,14 @@
 import './App.css';
-import SignIn from '../src/components/SignIn'
-import SignUp from '../src/components/SignUp'
-import Home from '../src/components/Home'
-import Account from '../src/components/Account'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+import Home from './pages/Home'
+import Account from './pages/Account'
 import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './pages/ProtectedRoute';
 
 function App() {
   return (
-    <>
-      <div className="app">
-        <header className="text-4xl font-bold text-center underline">Firebase Auth with Context</header>
-      </div>
       <AuthContextProvider>
         <Routes>
           <Route path="/signin" element={<SignIn />} />
@@ -21,7 +17,6 @@ function App() {
           <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
         </Routes>
       </AuthContextProvider>
-    </>
   );
 }
 
